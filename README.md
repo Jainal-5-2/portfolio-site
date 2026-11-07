@@ -13,7 +13,7 @@ I'm a 4th-year BS Computer Science student at Basilan State College. I work on f
 
 - **Framework:** Next.js (static export)
 - **Styling:** Tailwind CSS
-- **Language:** JavaScript
+- **Language:** TypeScript
 - **Hosting:** Vercel
 - **Backend:** none. The site is fully static.
 
