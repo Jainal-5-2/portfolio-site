@@ -1,0 +1,28 @@
+import Link from "next/link";
+import { Project } from "@/content/projects";
+
+export function ProjectCard({ project }: { project: Project }) {
+  return (
+    <Link
+      href={`/projects/${project.slug}`}
+      className="group flex flex-col gap-3 rounded-lg border border-zinc-200 p-6 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:hover:border-zinc-600"
+    >
+      <h3 className="text-lg font-semibold group-hover:underline">
+        {project.title}
+      </h3>
+      <p className="text-sm text-zinc-600 dark:text-zinc-400">
+        {project.summary}
+      </p>
+      <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
+        {project.stack.map((tag) => (
+          <li
+            key={tag}
+            className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+          >
+            {tag}
+          </li>
+        ))}
+      </ul>
+    </Link>
+  );
+}
