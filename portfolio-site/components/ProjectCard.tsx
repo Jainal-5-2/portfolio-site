@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Project } from "@/content/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
+  const shown = project.stack.slice(0, 5);
+  const extra = project.stack.length - shown.length;
+
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -14,7 +17,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.summary}
       </p>
       <ul className="mt-auto flex flex-wrap gap-1.5 pt-2">
-        {project.stack.map((tag) => (
+        {shown.map((tag) => (
           <li
             key={tag}
             className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
@@ -22,6 +25,11 @@ export function ProjectCard({ project }: { project: Project }) {
             {tag}
           </li>
         ))}
+        {extra > 0 && (
+          <li className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+            +{extra}
+          </li>
+        )}
       </ul>
     </Link>
   );

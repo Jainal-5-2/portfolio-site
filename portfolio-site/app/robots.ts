@@ -1,13 +1,11 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/content/site";
 
-const BASE_URL = "https://portfolio-site-jainal.vercel.app";
+const BASE_URL = site.url;
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: { userAgent: "*", allow: "/" },
     sitemap: `${BASE_URL}/sitemap.xml`,
   };
 }
