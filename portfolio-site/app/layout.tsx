@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     description: site.positioning,
     type: "website",
   },
+  verification: {
+    google: "RKJz7xvygbc9IemfrpnXkjtrOs6i5iYi1JcE9GEySwo",
+  },
 };
 
 export const viewport: Viewport = {
