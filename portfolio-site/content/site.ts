@@ -3,7 +3,7 @@ export const site = {
   fullName: "Julmunir Jainal",
   title: "Full-Stack Developer",
   positioning: "Full-stack developer who builds, debugs, and hardens web apps.",
-  url: "https://portfolio-site-jainal.vercel.app",
+  url: "https://jainal-portfolio.vercel.app",
   avatar: "/images/profile.webp",
   about: [
     "I'm a 4th-year BS Computer Science student at Basilan State College.",
