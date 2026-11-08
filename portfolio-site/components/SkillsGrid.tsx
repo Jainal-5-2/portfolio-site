@@ -7,10 +7,10 @@ export function SkillsGrid() {
     <Section id="skills">
       <Container>
         <h2 className="mb-6 text-2xl font-semibold tracking-tight">Skills</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-4">
           {Object.entries(site.skills).map(([group, items]) => (
             <div key={group}>
-              <h3 className="mb-2 text-sm font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              <h3 className="mb-2 text-xs font-medium uppercase tracking-wider text-zinc-500 sm:text-sm dark:text-zinc-400">
                 {group}
               </h3>
               <ul className="space-y-1 text-sm">

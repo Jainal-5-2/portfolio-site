@@ -8,9 +8,9 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group flex flex-col gap-3 rounded-lg border border-zinc-200 p-6 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:hover:border-zinc-600"
+      className="group flex flex-col gap-3 rounded-lg border border-zinc-200 p-5 transition-colors hover:border-zinc-400 sm:p-6 dark:border-zinc-800 dark:hover:border-zinc-600"
     >
-      <h3 className="text-lg font-semibold group-hover:underline">
+      <h3 className="text-base font-semibold group-hover:underline sm:text-lg">
         {project.title}
       </h3>
       <p className="text-sm text-zinc-600 dark:text-zinc-400">
