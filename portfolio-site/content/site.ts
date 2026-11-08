@@ -1,5 +1,5 @@
 export const site = {
-  name: "Jay",
+  name: "Julmunir Jainal",
   fullName: "Julmunir Jainal",
   title: "Full-Stack Developer",
   positioning: "Full-stack developer who builds, debugs, and hardens web apps.",
