@@ -23,10 +23,6 @@ export const metadata: Metadata = {
     title: `${site.fullName} — ${site.title}`,
     description: site.positioning,
     type: "website",
-    siteName: site.fullName, // Added this
-  },
-  verification: {
-    google: "RKJz7xvygbc9IemfrpnXkjtrOs6i5iYi1JcE9GEySwo", // Change this if you generate a new one!
   },
 };
 
@@ -40,6 +36,26 @@ export const viewport: Viewport = {
   ],
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.fullName,
+  jobTitle: site.title,
+  url: site.url,
+  sameAs: [site.contact.github, site.contact.linkedin],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: site.education.school,
+  },
+  knowsAbout: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Django",
+    "Full-Stack Development",
+  ],
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -47,20 +63,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
+      <body className="flex min-h-full flex-col font-sans">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": site.fullName,
-              "url": site.url,
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-      </head>
-      <body className="flex min-h-full flex-col font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
