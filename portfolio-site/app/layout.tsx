@@ -23,9 +23,10 @@ export const metadata: Metadata = {
     title: `${site.fullName} — ${site.title}`,
     description: site.positioning,
     type: "website",
+    siteName: site.fullName, // Added this
   },
   verification: {
-    google: "RKJz7xvygbc9IemfrpnXkjtrOs6i5iYi1JcE9GEySwo",
+    google: "RKJz7xvygbc9IemfrpnXkjtrOs6i5iYi1JcE9GEySwo", // Change this if you generate a new one!
   },
 };
 
@@ -46,6 +47,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": site.fullName,
+              "url": site.url,
+            }),
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         <ThemeProvider
           attribute="class"
